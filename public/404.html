@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SUCHI Jewellery</title>
+    <script type="text/javascript">
+      // Safe SPA redirect for GitHub Pages without infinite loops
+      var l = window.location;
+      var path = l.pathname;
+      var segments = path.split('/').filter(Boolean);
+      
+      // Determine project base path:
+      // If deployed at username.github.io/repo-name/, segments[0] is 'repo-name'
+      // If deployed at custom domain or username.github.io/, base is '/'
+      var isGithubProject = l.hostname.endsWith('github.io') && segments.length > 0;
+      var repoBase = isGithubProject ? '/' + segments[0] + '/' : '/';
+      
+      // Prevent infinite redirect if we are already at the base
+      if (path !== repoBase && path !== repoBase.slice(0, -1)) {
+        l.replace(l.protocol + '//' + l.host + repoBase + l.search + l.hash);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

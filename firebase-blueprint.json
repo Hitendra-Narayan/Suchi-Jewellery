@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "products": {
+      "title": "Products",
+      "description": "Catalog of jewelry products",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "category": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "isNew": { "type": "boolean" },
+        "isBestSeller": { "type": "boolean" },
+        "inStock": { "type": "boolean" },
+        "metalType": { "type": "string" },
+        "purity": { "type": "string" },
+        "weightGrams": { "type": "number" },
+        "stoneType": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["id", "name", "price", "category", "images"]
+    },
+    "orders": {
+      "title": "Orders",
+      "description": "Customer orders history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "shippingAddress": { "type": "object" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "paymentMethod": { "type": "string" }
+      },
+      "required": ["id", "items", "totalAmount", "status", "createdAt"]
+    },
+    "users": {
+      "title": "User Profiles",
+      "description": "Registered user accounts",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "reviews": {
+      "title": "Product Reviews",
+      "description": "Customer reviews and ratings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "userName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "date": { "type": "string" },
+        "verified": { "type": "boolean" }
+      },
+      "required": ["id", "productId", "userName", "rating", "comment", "date"]
+    }
+  }
+}

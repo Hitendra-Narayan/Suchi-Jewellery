@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Products: Anyone can read products. Anyone can create/update products in store (or authenticated users / admin)
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Orders: Users can read/write their orders or place orders
+    match /orders/{orderId} {
+      allow read, write: if true;
+    }
+
+    // Reviews: Anyone can read, anyone can write
+    match /reviews/{reviewId} {
+      allow read, write: if true;
+    }
+
+    // Users: Users can read and write their user document
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Carts / Wishlists sync if used
+    match /user_carts/{userId} {
+      allow read, write: if true;
+    }
+
+    match /user_wishlists/{userId} {
+      allow read, write: if true;
+    }
+
+    match /site_settings/{settingId} {
+      allow read, write: if true;
+    }
+
+    match /contact_messages/{msgId} {
+      allow read, write: if true;
+    }
+  }
+}

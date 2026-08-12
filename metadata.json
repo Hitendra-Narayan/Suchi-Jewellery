@@ -1,0 +1,6 @@
+{
+  "name": "Suchi Jewellery",
+  "description": "Artificial Jewellery e-commerce store with Kundan, American Diamond, Rose Gold, and bridal collections made to make you happy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

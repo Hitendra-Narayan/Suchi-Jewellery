@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink: #F7AFC4;
+  --color-brand-lightpink: #FDE7EF;
+  --color-brand-[#F7AFC4]: #F7AFC4;
+  --color-brand-[#FDE7EF]: #FDE7EF;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFDFE;
+    color: #2D2D2D;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Primary Blush Pink & Light Baby Pink theme utility bindings */
+.bg-brand-pink {
+  background-color: #F7AFC4;
+}
+.bg-brand-lightpink {
+  background-color: #FDE7EF;
+}
+.text-brand-pink {
+  color: #F7AFC4;
+}
+.border-brand-pink {
+  border-color: #F7AFC4;
+}
+.border-brand-lightpink {
+  border-color: #FDE7EF;
+}
+
+/* Custom scrollbar in Light Baby Pink & Primary Blush Pink */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDE7EF;
+}
+::-webkit-scrollbar-thumb {
+  background: #F7AFC4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E587A3;
+}
+
